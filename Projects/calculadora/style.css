@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --darkBlue: rgb(14, 24, 163);
+  --darkRed: rgb(161, 12, 12);
+  --white: #fff;
+}
+
+.container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--darkBlue);
+  width: 30%;
+  padding: 2vw 0 0;
+  border-radius: 15px;
+}
+
+.numbers h1 {
+    font-size: 1.5em;
+    color: var(--white);
+}
+
+.btns {
+    border: 0;
+    background: var(--darkRed);
+}
+
+#resultado {
+  padding: 2vw;
+  color: var(--white);
+}

@@ -15,14 +15,49 @@ const resultado = document.getElementById("resultado");
 //   resultado.textContent = Number(number1.value) * Number(number2.value);
 // }
 
+// function calculo(operacao) {
+//   if (operacao === "somar") {
+//     resultado.textContent = Number(number1.value) + Number(number2.value);
+//   } else if (operacao === "subtrair") {
+//     resultado.textContent = Number(number1.value) - Number(number2.value);
+//   } else if (operacao === "dividir") {
+//     resultado.textContent = Number(number1.value) / Number(number2.value);
+//   } else if (operacao === "multiplicar") {
+//     resultado.textContent = Number(number1.value) * Number(number2.value);
+//   }
+// }
+
+// function calculo(operacao) {
+//   switch (operacao) {
+//     case "+":
+//       resultado.textContent = Number(number1.value) + Number(number2.value);
+//       break;
+//     case "-":
+//       resultado.textContent = Number(number1.value) - Number(number2.value);
+//       break;
+//     case "/":
+//       resultado.textContent = Number(number1.value) / Number(number2.value);
+//       break;
+//     case "*":
+//       resultado.textContent = Number(number1.value) * Number(number2.value);
+//       break;
+
+//     default:
+//       break;
+//   }
+// }
+
 function calculo(operacao) {
-  if (operacao === "somar") {
-    resultado.textContent = Number(number1.value) + Number(number2.value);
-  } else if (operacao === "subtrair") {
-    resultado.textContent = Number(number1.value) - Number(number2.value);
-  } else if (operacao === "dividir") {
-    resultado.textContent = Number(number1.value) / Number(number2.value);
-  } else if (operacao === "multiplicar") {
-    resultado.textContent = Number(number1.value) * Number(number2.value);
+  try {
+    const finalResultado = eval(
+      "Number(number1.value)" + operacao + "Number(number2.value)"
+    );
+    if (isNaN(finalResultado) || !isFinite(finalResultado)) {
+      alert("Error!");
+      return;
+    }
+    resultado.textContent = finalResultado;
+  } catch (error) {
+    alert("ERROR!");
   }
 }

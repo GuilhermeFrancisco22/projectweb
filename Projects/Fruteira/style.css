@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --redM: #be0202;
+  --greenM: #637e0b;
+  --corpo: #c9ad6be9;
+  --center: #12335f;
+}
+
+body {
+  background: var(--corpo);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  padding: 2vw;
+  border-radius: 25px;
+  display: grid;
+  justify-items: center;
+  background: var(--center);
+  box-shadow: 0 0 15px 8px black;
+}
+
+.frutas {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.frutas div {
+  display: grid;
+  justify-items: center;
+}
+
+.morango,
+.maca {
+  color: #fff;
+}
+
+.morango img,
+.maca img {
+  border-radius: 50%;
+  border: solid 2px #fff;
+}
+
+.morango input,
+.maca input {
+  border: 0;
+  border-radius: 5px;
+  width: 50px;
+  padding: 1.5%;
+  transition: .5s;
+}
+.morango input:focus {
+  background: var(--redM);
+  color: #fff;
+}
+.maca input:focus {
+    background: var(--greenM);
+    color: #fff;
+}
+
+.btn {
+  border: 0;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 1%;
+  transition: .5s;
+}
+
+#total {
+  color: #fff;
+}

@@ -57,6 +57,13 @@ function calculo(operacao) {
       return;
     }
     resultado.textContent = finalResultado;
+    if (finalResultado <= 0) {
+      resultado.style.color = "red";
+    } else if (finalResultado <= 50) {
+      resultado.style.color = "blue";
+    } else if (finalResultado > 100) {
+      resultado.style.color = "green";
+    }
   } catch (error) {
     alert("ERROR!");
   }

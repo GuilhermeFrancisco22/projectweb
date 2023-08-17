@@ -8,11 +8,6 @@ const main = document.getElementById("main");
 
 let currentData = new Date(Date.now());
 
-/*
-Melhorar o objeto acima, de modo que o calcAge retorne 
-a idade em meses e anos da pessoa. 45 anos e 11 meses
-*/
-
 //Trabalhando com listas de objetos
 
 const rickNmorty = [
@@ -658,7 +653,7 @@ for (let index = 0; index < rickNmorty.length; index++) {
   // const urlImage = rickNmorty[index].image;
 
   let myDiv = document.createElement("div");
-  const { image, name, gender, status, species } = rickNmorty[index];
+  const {id, image, name, gender, status, species } = rickNmorty[index];
   myDiv.classList.add("cards");
   myDiv.innerHTML = `
   <img src="${image}" alt="">
@@ -666,22 +661,23 @@ for (let index = 0; index < rickNmorty.length; index++) {
   <h2>${status}</h2>
   <h2>${species}</h2>
   <h2>${gender}</h2>
-  <button class="btn" id="n">Curtir</button>
   `;
   main.appendChild(myDiv);
+  const btns = document.createElement("button");
+  btns.innerHTML = `curtir`;
+  myDiv.appendChild(btns);
+  btns.addEventListener("click", () => {
+    const like = [];
+    for (let index = 0; index <= like.length; index++) {
+      if(like.length == 1){
+        like[index]--
+      }else {
+        like[index]++
+      }
+    }
+    console.log(like)
+  });
 }
-
-// function btn() {
-//   alert("nha");
-// }
-
-let btn = document.getElementById("n");
-
-btn = [
-  addEventListener("click", () => {
-  }),
-];
-
 // button.addEventListener("click", () => {
 //   produto = {
 //     //Gera id randomico e arredonda
